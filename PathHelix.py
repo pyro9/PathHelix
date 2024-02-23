@@ -90,7 +90,6 @@ class PathHelix:
 		obj.addProperty("App::PropertyBool", "ExtraHalf", "Dimensions").ExtraHalf=False
 		obj.addProperty("App::PropertyBool", "Reverse", "Dimensions").Reverse=False
 
-		ViewProviderBox(obj.ViewObject)
 
 	def onDocumentRestored(self, obj):
 		if (not hasattr(obj,"Reverse")):
@@ -111,7 +110,7 @@ class PathHelix:
 		elif (name == "Pitch"):
 			obj.Count = l/obj.Pitch
 		
-class ViewProviderBox:
+class ViewProviderPathHelix:
 
     def __init__(self, obj):
         """
@@ -225,7 +224,7 @@ def create():
     myObj.Rotation=0
     myObj.Spine=sel2
     myObj.Count=sel2.Shape.Length
-    ViewProviderBox(myObj.ViewObject)
+    ViewProviderPathHelix(myObj.ViewObject)
     App.ActiveDocument.recompute()
 
 
