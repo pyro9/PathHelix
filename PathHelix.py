@@ -94,6 +94,7 @@ class PathHelix:
 	def onDocumentRestored(self, obj):
 		if (not hasattr(obj,"Reverse")):
 			obj.addProperty("App::PropertyBool", "Reverse", "Dimensions").Reverse=False
+		obj.ViewObject.Proxy.fp = obj
 
 	def execute(self, obj):
 		print("Spine=", obj.Spine.Shape)
@@ -118,6 +119,7 @@ class ViewProviderPathHelix:
         """
 
         obj.Proxy = self
+        self.fp = obj.Object
 
     def attach(self, obj):
         """
@@ -157,6 +159,11 @@ class ViewProviderPathHelix:
         """
 
         App.Console.PrintMessage("Change property: " + str(prop) + "\n")
+
+    def claimChildren(self):
+        if hasattr(self,"fp"):
+            return [ self.fp.Spine ]
+        return None
 
     def getIcon(self):
         """
@@ -199,17 +206,17 @@ class ViewProviderPathHelix:
                  """
 
 
-#    def dumps(self):
-#        """
-#        Called during document saving.
-#        """
-#        return None
-#
-#    def loads(self,state):
-#        """
-#        Called during document restore.
-#        """
-#        return None
+    def dumps(self):
+        """
+        Called during document saving.
+        """
+        return None
+
+    def loads(self,state):
+        """
+        Called during document restore.
+        """
+
 #w = MakeHelix(subObject, 1, 3, cont=2)
 #Part.show(w)
 
