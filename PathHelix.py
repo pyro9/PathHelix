@@ -18,6 +18,7 @@
 import Draft, Part, FreeCADGui
 import FreeCAD as App
 import os
+from pathlib import Path
 
 def computeRadial(v0, v1, line, angle):
 
@@ -170,12 +171,10 @@ class ViewProviderPathHelix:
         Return the icon in XMP format which will appear in the tree view. This method is optional and if not defined a default icon is shown.
         """
 
-        
-        s = App.getUserAppDataDir()+"Icons/PathHelix2.svg"
         try:
-            os.stat(s)
-            return s
+            return str(Path(__file__).parent / 'PathHelix.svg')
         except:
+            print("Fallback to xpm")
             return """
                 /* XPM */
                 static char *drawing[] = {
