@@ -1,19 +1,20 @@
-######Convert the following code to English and optimized: by Syres 
-## https://forum.freecad.org/viewtopic.php?p=703590#p703590
-## How to draw polygonal spirals in Freecad?
-#################### Section object selected for follow Begin ####################################################
-##Macro_D_Un_Jour_Rotation_D_Un_Fil_Sur_Un_Fil
-##20/01/2020, 1/09/2023
-##Mario52
-##https://forum.freecadweb.org/viewtopic.php?f=12&t=52069&start=40
-##Portion FCSpring_Helix_Variable
-##
-#import PySide2.QtCore
-#import PySide2.QtWidgets
-#from PySide2 import (QtWidgets, QtCore, QtGui)
-#from PySide2.QtWidgets import (QWidget, QVBoxLayout, QStyle, QDockWidget, QToolBar, QDialog)
-#from PySide2.QtGui import (QColor, QIcon)
-#from PySide2.QtCore import QSize
+#   Copyright (c) 2024 Steven James <pyro@4axisprinting.com>        
+#                                                                         
+#   This library is free software; you can redistribute it and/or
+#   modify it under the terms of the GNU Library General Public
+#   License as published by the Free Software Foundation; either
+#   version 2 of the License, or (at your option) any later version.
+#
+#   This library  is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU Library General Public License for more details.
+#
+#   You should have received a copy of the GNU Library General Public
+#   License along with this library; see the file COPYING.LIB. If not,
+#   write to the Free Software Foundation, Inc., 59 Temple Place,
+#   Suite 330, Boston, MA  02111-1307, USA
+#                                                                         
 
 import Draft, Part, FreeCADGui
 import FreeCAD as App
