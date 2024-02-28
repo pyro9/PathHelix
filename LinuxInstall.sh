@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+cd $( dirname "$0")
 
 ln DoPathHelix.FCMacro ..
 mkdir ../../Icons
