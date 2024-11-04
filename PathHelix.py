@@ -109,9 +109,13 @@ class PathHelix:
 		l = obj.Spine.Shape.Length
 		print("onChanged", name, l)
 		if (name == "Count"):
-			obj.Pitch = l/obj.Count
+			v=l/obj.Count
+			if (not obj.Pitch == v):
+				obj.Pitch = l/obj.Count
 		elif (name == "Pitch"):
-			obj.Count = l/obj.Pitch
+			v=l/obj.Pitch
+			if (not obj.Count == v):
+				obj.Count = l/obj.Pitch
 		
 class ViewProviderPathHelix:
 
